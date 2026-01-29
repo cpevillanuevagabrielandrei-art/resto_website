@@ -1,0 +1,400 @@
+/* ============================
+   MONTÉ Restaurant - Unified Style
+   ============================ */
+
+/* ---------------------------
+   Base Body
+---------------------------- */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: radial-gradient(circle at 20% 30%, #f6c89f, transparent 40%),
+              radial-gradient(circle at 80% 20%, #f2e9d8, transparent 45%),
+              radial-gradient(circle at 50% 80%, #e7a977, transparent 45%),
+              #f5f5f5;
+  background-attachment: fixed;
+  color: #2b2b2b;
+}
+
+/* ---------------------------
+   HEADER
+---------------------------- */
+.header {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo img {
+  height: 50px;
+  width: auto;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #2b2b2b;
+  font-weight: 500;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: #c58b5a;
+}
+
+/* ---------------------------
+   HERO SECTION (Homepage)
+---------------------------- */
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  text-align: center;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero-text h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.hero-text p {
+  font-size: 1.125rem;
+  margin: 1rem 0 2rem;
+}
+
+.hero-buttons .btn {
+  padding: 0.75rem 1.75rem;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  position: relative;
+}
+
+.btn.primary {
+  background-color: #c58b5a;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(197, 139, 90, 0.3);
+}
+
+.btn.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 10px rgba(197,139,90,0.6),
+              0 0 20px rgba(197,139,90,0.5),
+              0 0 30px rgba(197,139,90,0.4);
+}
+
+.btn.primary.pulse {
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+  0%,100% { box-shadow: 0 0 15px rgba(197,139,90,0.4);}
+  50% { box-shadow: 0 0 25px rgba(197,139,90,0.7);}
+}
+
+.btn.secondary {
+  border: 1px solid #c58b5a;
+  color: #c58b5a;
+  background: transparent;
+  box-shadow: 0 4px 15px rgba(197, 139, 90, 0.2);
+}
+
+.btn.secondary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 8px rgba(197,139,90,0.5),
+              0 0 15px rgba(197,139,90,0.4),
+              0 0 25px rgba(197,139,90,0.3);
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+/* ---------------------------
+   TOP LIST / FOOD CARDS
+---------------------------- */
+.top-list {
+  padding: 4rem 1rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 3rem auto 0;
+  justify-items: center;
+}
+
+.food-card {
+  background: rgba(255,255,255,0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 22px;
+  padding: 1rem;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, opacity 0.6s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.food-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+
+.food-card h4 {
+  margin: 1rem 0 0.5rem;
+}
+
+.food-card p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.food-card .price {
+  font-weight: 600;
+  color: #c58b5a;
+}
+
+.food-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+}
+
+.food-card:nth-child(1) { animation-delay: 0.1s; }
+.food-card:nth-child(2) { animation-delay: 0.3s; }
+.food-card:nth-child(3) { animation-delay: 0.5s; }
+
+.food-card,
+.food-card * {
+  animation: fadeInUp 0.6s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------------------
+   SERVICES
+---------------------------- */
+.services {
+  padding: 4rem 1rem;
+  text-align: center;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(12px);
+}
+
+.service-items {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.service {
+  padding: 1rem 2rem;
+  background: #fff;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* ---------------------------
+   CONTACT PAGE ENHANCEMENTS
+---------------------------- */
+
+/* CONTACT HERO */
+.contact-hero {
+  max-width: 1000px;       /* same as contact container */
+  margin: 0 auto;           /* center horizontally */
+  padding: 4rem 1rem;       /* top/bottom spacing */
+  text-align: center;       /* center text */
+}
+
+.contact-container {
+  max-width: 1000px;       /* restrict width for symmetry */
+  margin: 0 auto;           /* center horizontally */
+  padding: 4rem 1rem;
+  display: flex;
+  gap: 2rem;               /* space between info and form */
+  flex-wrap: wrap;          /* allow stacking on mobile */
+  justify-content: center;  /* center children */
+}
+
+.contact-card {
+  flex: 1 1 450px;          /* responsive width */
+  max-width: 480px;         /* prevents stretching too wide */
+  margin: 0 auto;           /* center each card */
+  padding: 2rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+.contact-card input,
+.contact-card textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: none;
+  margin-bottom: 1rem;
+  background: rgba(255,255,255,0.45);
+  font-size: 1rem;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.contact-card input:focus,
+.contact-card textarea:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(197,139,90,0.6);
+  transform: translateY(-2px);
+}
+
+/* Floating icons */
+.contact-card .icon {
+  display: inline-block;
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+  position: relative;
+  animation: float 3s ease-in-out infinite;
+}
+
+.phone-icon { animation-delay: 0s; }
+.email-icon { animation-delay: 0.5s; }
+.location-icon { animation-delay: 1s; }
+.clock-icon { animation-delay: 1.5s; }
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.icon:hover {
+  color: #c58b5a;
+  text-shadow: 0 0 8px #c58b5a;
+  transform: translateY(-3px);
+}
+
+/* Map Card */
+.map-card {
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.map-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.map-placeholder {
+  height: 250px;
+  background: rgba(200,200,200,0.25);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ---------------------------
+   FOOTER
+---------------------------- */
+.footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ---------------------------
+   RESPONSIVE
+---------------------------- */
+@media (max-width: 768px) {
+  .hero, .top-list, .services, .footer, .contact-card, .map-card {
+    backdrop-filter: blur(8px);
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .hero-image img {
+    max-width: 80%;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .food-card {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .contact-card {
+    max-width: 90%;       /* nicely fit small screens */
+  }
+}
